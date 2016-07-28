@@ -3,8 +3,8 @@ require 'capybara/cucumber'
 require 'rspec/expectations'
 require 'appium_capybara'
 
-DEVICE_ID = $ADB_DEVICE_ARG
-APPIUM_PORT = $APPIUM_PORT
+DEVICE_ID = ENV['ADB_DEVICE_ARG']
+APPIUM_PORT = EMN['APPIUM_PORT']
 HIVE_QUEUE_NAME = "myhiveTest"
 def appium_caps
     {
