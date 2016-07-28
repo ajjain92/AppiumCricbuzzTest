@@ -3,12 +3,12 @@ require 'capybara/cucumber'
 require 'rspec/expectations'
 require 'appium_capybara'
 
-DEVICE_ID = "02157df23bc41912"
-APPIUM_PORT = "4723"
-HIVE_QUEUE_NAME = "Galaxy S6"
+DEVICE_ID = $ADB_DEVICE_ARG
+APPIUM_PORT = $APPIUM_PORT
+HIVE_QUEUE_NAME = $HIVE_QUEUE_NAME
 def appium_caps
     {
-        'MY_DEVICE'=> { platformName: "Android", deviceName: "Galaxy S4", udid: "02157df23bc41912", browserName: "chrome" } #, browserName: "Browser", platformVersion: “4.3”, deviceName: "#{DEVICE_ID}"
+        'MY_DEVICE'=> { platformName: "Android", deviceName: '#{HIVE_QUEUE_NAME}', udid: '#{DEVICE_ID}', browserName: "chrome"} 
     }
 end
 
